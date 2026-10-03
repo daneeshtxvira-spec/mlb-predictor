@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>DANEESHTXVIRA PICKS — MLB</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="wrap">
+<header class="brand"><div class="brandMark">D</div><div><div class="brandName">DANEESHTXVIRA PICKS</div><div class="brandSub">MLB · MODELO ESTADÍSTICO</div></div></header>
+<section class="heroIntro"><h1>Predictor MLB</h1><p>Selecciona los dos equipos, la fecha y analiza el partido automáticamente.</p></section>
+<section class="card"><div class="sectionTitle"><span>1</span><div><h2>Selecciona el partido</h2><p>Primero toca el equipo local y después el visitante.</p></div></div>
+<div class="dateRow"><label for="date">FECHA</label><input id="date" type="date"></div>
+<div class="teamCols"><div><div class="teamLabel homeLabel">LOCAL</div><div id="homeTeams" class="teams"></div></div><div><div class="teamLabel awayLabel">VISITANTE</div><div id="awayTeams" class="teams"></div></div></div>
+<div class="selectedMatch"><div id="homeSelected">Selecciona local</div><span>VS</span><div id="awaySelected">Selecciona visitante</div></div>
+<button id="analyzeBtn" class="primary" disabled>ANALIZAR PARTIDO</button><div id="status" class="status"></div></section>
+<section id="result" class="hidden">
+<div class="card heroCard"><div class="eyebrow">PICK DEL MODELO</div><div id="pick" class="pick"></div><div id="pickProb" class="pickProb"></div><div id="matchNote" class="note"></div></div>
+<div class="card"><div class="sectionTitle"><span>2</span><div><h2>Nivel real de cada equipo</h2><p>Temporada · últimos 10 · primeras 3</p></div></div><div class="statGrid"><div id="homeStats" class="teamStats"></div><div id="awayStats" class="teamStats"></div></div></div>
+<div class="card"><div class="sectionTitle"><span>3</span><div><h2>Cruce · Log5</h2><p>Probabilidad neutral y ajuste por localía.</p></div></div><div id="matchupRows"></div></div>
+<div class="card"><div class="sectionTitle"><span>4</span><div><h2>Carreras proyectadas</h2><p>Producción ofensiva y prevención de carreras.</p></div></div><div id="runRows"></div></div>
+<div class="card"><div class="sectionTitle"><span>5</span><div><h2>Over / Under y ±1.5</h2><p>Distribución normal con SD 4.24 por defecto.</p></div></div><div id="marketRows"></div></div>
+<div class="card"><div class="sectionTitle"><span>6</span><div><h2>Las 6 opciones</h2><p>Ordenadas por probabilidad matemática.</p></div></div><div id="options"></div></div>
+<div class="card"><h2>Cómo se calcula</h2><p class="note">Pythagorean usa RS y RA con exponente 1.83. El cruce usa Log5. La probabilidad de localía parte de 54%/46%. Las carreras proyectadas usan las tasas ofensivas y defensivas de local/visitante. El total se redondea a 0.5 y el ±1.5 usa una normal con SD 4.24. Los datos se obtienen de MLB Stats API y se recalculan según la fecha seleccionada.</p></div>
+</section></main><script src="config.js?v=1"></script><script src="model.js?v=1"></script><script src="api.js?v=1"></script><script src="app.js?v=1"></script></body></html>
